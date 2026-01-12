@@ -144,7 +144,7 @@ header {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
-  background-color: rgba(148, 241, 130, 0.616); /* شفاف قليل لتتماشى مع الخلفية العامة */
+  background-color: rgba(148, 241, 130, 0.616);
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
@@ -223,4 +223,36 @@ header {
 .comments-page .comment p {
   margin: 0;
   color: #333;
+}
+
+
+
+#linkhome{
+    position: fixed;
+    top:0;
+    left: 0;
+    padding: 10px 15px;
+    background-color: #30d160;
+    text-decoration: none;
+    border-radius: 10px;
+    color: #000;
+    z-index: 1000;
+}
+#linkcomment{
+    display: block;
+    margin: 20px auto;
+    width: 10%;
+    padding: 10px 15px;
+    background-color: #86cf6f;
+    color: #0d2004;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition:background-color 0.3s , transfrom 0.2s ;
+
+}
+#linkcomment:hover{
+background-color: #03f503;
+transform: translateY(-2px);
 }
