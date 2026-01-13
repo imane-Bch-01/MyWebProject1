@@ -63,5 +63,48 @@
     </table>
         <a href="Levender.php" id="linkcomment">انقر هنا لترك تعليق</a>
 </section>
+    <script>
+const searchInput = document.getElementById('searchInput');
+const resultsDiv = document.getElementById('results');
+
+searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    resultsDiv.innerHTML = ''; 
+
+    if (query === '') return; 
+
+    fetch('herbs.json')
+      .then(response => response.json())
+      .then(data => {
+          const filtered = data.filter(herb =>
+              herb.keywords.some(k => k.toLowerCase().includes(query))
+          );
+
+          if (filtered.length === 0) {
+             
+              const div = document.createElement('div');
+              div.textContent = "عذرًا، لم نجد عشبة مطابقة لما كتبته. يمكنك ترك تعليق بالمعلومات التي تبحث عنها.";
+              div.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
+              div.style.padding = "10px";
+              div.style.borderRadius = "10px";
+              resultsDiv.appendChild(div);
+          } else {
+             
+              filtered.forEach(herb => {
+                  const div = document.createElement('div');
+                  div.textContent = herb.name + ' (' + herb.latin + ')';
+                  div.style.backgroundColor = "rgba(76, 175, 80, 0.2)";
+                  div.style.margin = "10px auto";
+                  div.style.padding = "10px";
+                  div.style.borderRadius = "10px";
+                  div.style.width = "50%";
+                  resultsDiv.appendChild(div);
+              });
+          }
+      })
+      .catch(err => console.error("خطأ في جلب JSON:", err));
+});
+
+</script>
 </body>
 </html>
