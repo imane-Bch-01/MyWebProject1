@@ -256,3 +256,29 @@ header {
 background-color: #03f503;
 transform: translateY(-2px);
 }
+
+
+#searchInput {
+     padding: 10px;
+     width: 50%;
+     font-size: 16px;
+     border-radius: 10px;
+     border: 1px solid #ccc;
+ }
+
+ #results div {
+     background-color: rgba(76, 175, 80, 0.2);
+     margin: 10px auto;
+     padding: 10px;
+     width: 50%;
+     border-radius: 10px;
+     font-size: 18px;
+ }
+
+#pagetitle{
+      text-align: center;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  color: #0d3102;
+  text-decoration: underline;
+}
